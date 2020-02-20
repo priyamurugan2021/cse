@@ -1,0 +1,8 @@
+from math import *
+n=int(input())
+b=int(sqrt(n))
+print(b)
+    
+#bank locker for open and close
+#the answer will be perfect square
+#eg:  100 o/p will be 10
