@@ -1,0 +1,11 @@
+a=int(input())
+s=bin(a)[2:][0::2]
+b=int(s,2)
+c=int(s,4)
+if c==a:
+    print(b)
+else:
+    print("NOT PRESENT")
+    
+    #i/p:81 o/p:13
+    #0,1,4,5,16,17,20,21.....
