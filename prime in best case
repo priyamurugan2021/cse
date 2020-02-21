@@ -1,6 +1,24 @@
+
+   AVERAGE CASE for a prime number
+
 n=int(input())
 c=0
 for i in range(2,n//2+1):
+    if n%i==0:
+        print("not prime")
+        break
+else:
+    print("prime")
+    
+    
+    
+    BEST CASE for prime number
+
+
+from math import *
+n=int(input())
+s=int(sqrt(n))
+for i in range(2,s+1):
     if n%i==0:
         print("not prime")
         break
