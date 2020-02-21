@@ -9,3 +9,12 @@ else:
     
     #i/p:81 o/p:13
     #0,1,4,5,16,17,20,21.....
+    
+#optimize program for reverse os series
+n=int(input())
+s=bin(n)[2:]
+print(len(s))
+if (int(s[1::2])==0 and len(s)%2!=0):
+    print(int(s[::2],2))
+else:
+    print("Not Present")
