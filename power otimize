@@ -1,0 +1,14 @@
+power optimize program
+
+mod=10**9+7
+def powe(a,b):
+    res=1
+    while(b!=0):
+        if(b&1):
+            res=(res*a)%mod
+            a=(a*a)%mod
+            b=(b>>1)
+    return res
+n=int(input())
+res=pow(2,(n-1))-2
+print(res%mod)
