@@ -1,0 +1,28 @@
+
+LONGEST COMMAON SUB SEQUENCE:
+-----------------------------
+x,y=input().split(" ")
+n,m=len(x),len(y)
+l=[[0 for _ in range(m+1)]for _ in range(n+1)]
+for i in range(1,n+1):
+    for j in range(1,m+1):
+        if(x[i-1]==y[j-1]):
+            l[i][j]=l[i-1][j-1]+1
+        else:
+            l[i][j]=max(l[i-1][j],l[i][j-1])
+print(l[n][m])
+for i in l:
+    print(i)
+    
+INPUT:    
+welcome hello
+3
+OUTPUT:
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 1, 1, 1, 1]
+[0, 0, 1, 2, 2, 2]
+[0, 0, 1, 2, 2, 2]
+[0, 0, 1, 2, 2, 3]
+[0, 0, 1, 2, 2, 3]
+[0, 0, 1, 2, 2, 3]
