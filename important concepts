@@ -1,0 +1,835 @@
+Gmail	Prasath MSD7 <prasathmuruganmsd7@gmail.com>
+MKCE PRACTICE 14P + Additional programs
+S Divya <divya.psaravanan@gmail.com>	Tue, Mar 31, 2020 at 11:11 AM
+To: Keerthana G <keerthana.guna26@gmail.com>, abithiyagarajan2804@gmail.com, suganyakrithimkce@gmail.com, divyabharathi7638@gmail.com, VK18 <mails4guhan@gmail.com>, shimmarrahim.8032000@gmail.com, Sacratees 007 <sacratees007be@gmail.com>, Sanju S <ssanjay.7896@gmail.com>, jegadeeswarankrr@gmail.com, arjunvj77@gmail.com, Muhil Leo <muhilrajanv@gmail.com>, prasathcse <prasathmuruganmsd7@gmail.com>
+1.Convert Base
+Given a number of with base A to base B, where A is the smallest number which has two fsactors, and B is a number which a number which is formed by multiplyig the unique terms in the prime factorised form C, where C is the tenth number which has odd number of factor.
+
+Input Format
+
+One integer input N
+
+Constraints
+
+1<=N<=10^18
+
+Output Format
+
+Base converted output
+
+Sample Input 0
+
+11101000010001010
+Sample Output 0
+
+118922
+a=input()
+b=int(a,2)
+print(b)
+2.Convert Base V_2.0
+
+
+
+Given a number of with base A to base B, where A is the smallest number which has two factors, and B is a number which is second highest factor of a number which when added with the second ever number which has odd number of factors, they add up to form a number which is the sisth ever number to have odd number of factors.
+
+Input Format
+
+One integer input N
+
+Constraints
+
+1<=N<=10^18
+
+Output Format
+
+The converted base element output
+
+Sample Input 0
+
+11000100000111110
+Sample Output 0
+
+1883e
+
+a=input()
+a=int(a,2)
+l=[]
+while a:
+    if a%16 >9:
+        if a%16==10:
+            l.append('a')
+        if a%16==11:
+            l.append('b')
+        if a%16==12:
+            l.append('c')
+        if a%16==13:
+            l.append('d')
+        if a%16==14:
+            l.append('e')
+        if a%16==15:
+            l.append('f')
+    else:
+        l.append(str(a%16))
+    a=a//16
+l=l[::-1]
+print("".join(l))
+3.Trailing Zeros Count
+
+
+
+
+Given a number N, find out the number of trailing zeros in the factorial of the given number N
+
+Input Format
+
+One integer input
+
+Constraints
+
+!<=N<=10^18
+
+Output Format
+
+One integer output denoting the number of zeros in the factorial of the given number N
+
+
+i/p:15 o/p:3
+
+
+def find_trailing_zeros(num) :
+    sum = 0
+    i = 1
+    while(True) :
+        quotient = num // (5 ** i)
+        if(quotient == 0) :
+                break
+        sum += quotient
+        i += 1
+    return(sum)
+num=int(input())
+print(find_trailing_zeros(num))
+4.Facsum
+
+
+
+
+Given a number N, find the factorial of the gien number and repeatedly add the digits of the factorial till you are left with one digit.
+
+Input Format
+
+One integer input
+
+Constraints
+
+1<=N<=20
+
+Output Format
+
+One digit integer output
+
+Sample Input 0
+
+0
+Sample Output 0
+
+1
+
+from math import factorial as f
+a=int(input())
+b=f(a)
+c=b%9
+print(c)
+
+5.Fire the Zeros
+
+Given a number N, remove all the zeros from the binary representation of the number and convert the remaining number to integer.
+
+Input Format
+
+One integer value N
+
+Constraints
+
+1<=N<=10^18
+
+Output Format
+
+One integer output
+
+Sample Input 0
+
+7911852283209194
+Sample Output 0
+
+268435455
+
+import math
+a=int(input())
+b=bin(a).split('b')
+c=str(b[1]).split('0')
+e=list(''.join(c))
+d=0
+for i in range(len(e)):
+    d=d+math.pow(2,i)
+print(int(d))
+
+-----------------------------------------------------------------
+6.Watson gives four 3-dimensional points to Sherlock and asks him if they all lie in the same plane. Your task here is to help Sherlock.
+
+Input Format
+First line contains T, the number of testcases.
+Each test case consists of four lines. Each line contains three integers, denoting xi yi zi.
+
+Output Format
+For each test case, print YES or NO whether all four points lie in same plane or not, respectively.
+
+Constraints
+1 ≤ T ≤ 104
+-103 ≤ xi,yi,zi ≤ 103
+
+Sample Input
+
+1
+1 2 0
+2 3 0
+4 0 0
+0 0 0
+Sample Output
+
+YES
+Explanation
+All points have zi = 0, hence they lie in the same plane, and output is YES
+
+
+
+
+
+t = int(input())
+for j in range(t):
+    x = []
+    y = []
+    z = []
+    for i in range(4):
+        a,b,c = map(int, input().split())
+        x.append(a)
+        y.append(b)
+        z.append(c)
+    x.sort()
+    y.sort()
+    z.sort()
+    print (["NO", "YES"][x[3]-x[0]==0 or y[3]-y[0]==0 or z[3]-z[0]==0])
+
+
+-----------------------------------------------------------------
+7.ARRAY ADJACENT
+
+Given a number N followed by n integers, swap the adjacent elements of the array and print the resultant array as the output.
+
+Input Format
+
+First line of input has one single integer N Second line of input has N spaced integers
+
+Constraints
+
+1<=N<=10^9 -10^9<=a[i]<=10^9
+
+Output Format
+
+The resultant array after performing the adjacent swaps.
+
+Sample Input 0
+
+4
+1 2 3 4
+Sample Output 0
+
+2 1 4 3
+Explanation 0
+
+Adjacent elements of the array are swapped.
+
+PROGRAM:
+
+n=int(input())
+a=list(map(int,input().split()))
+if (n%2==0):
+    for i in range(0,n,2):
+        a[i],a[i+1]=a[i+1],a[i]
+    print(*a)
+else:
+    for i in range(0,n-1,2):
+        a[i],a[i+1]=a[i+1],a[i]
+    print(*a)
+
+
+
+-----------------------------------------
+8.STRING EXPANSION
+Given a string input, which comprises of numbers and characters, expand the given string as instructed below.
+
+For Example: The string "3b2aa" should be seen as 3[b[2[aa]]] and it should be expanded as baaaabaaaabaaaa
+
+Input Format
+
+One string input N
+
+Constraints
+
+2<=len(n)<=10^3 where n is the given string
+
+Output Format
+
+The expanded string
+
+Sample Input 0
+
+4pyo
+Sample Output 0
+
+pyopyopyopyo
+PROGRAM:
+import re
+n=input()
+num=re.compile('[\d]+').findall(n)
+alpha=re.compile('[\D]+').findall(n)
+s=""
+for i in range(len(alpha)):
+    s=(alpha.pop()+s)*int(num.pop())
+print(s)
+
+
+-------------------------------------------------------
+9.ITERATOR 1
+
+Gvien a number N followed by N integers, it will comprise of certain positive numbers, then a zero tehn follows negative numbers. Find the minimum number of iterations to convert a Positive-Zero-Negative array into a Negative-Zero-Positive array, by abiding by the given constraints.
+
+Constraints for Swapping: 1. Swapping is possible only with a Zero 2. A positive number should be swapped only to the right hand side 3. A negative number should be swappend only to the left hand side 4. Swapping can be done to a maximum of two steps at a time.
+
+Find the minimum number of iterations.
+
+Input Format
+
+The first line of input has a single integer value N followed by N integer values.
+
+Constraints
+
+3<=N<=2500 -1000<=a[i]<=1000 Where, N is the number of elements of the array and a[i] is each element of the array.
+
+Output Format
+
+One single integer denoting the number of iterations required.
+
+Sample Input 0
+
+3
+1 0 -2
+Sample Output 0
+
+3
+Explanation 0
+
+Input: 1 0 -2 Step1: 0 1 -2 Step2:-2 1 0 Step3:-2 0 1 Output: 3 Minimum of three iterations are required to change the given array into the required format.
+
+PROGRAM:
+
+a=int(input())
+b=list(map(int,input().split()))
+p=0
+n=0
+for i in range(len(b)):
+    if(i<0):
+        p=p+1
+    else:
+        n=n+1
+print(p+n+p*n)
+
+
+
+========================================================
+
+10.REVERSE ME IF U CAN
+Given a number, print the reverse of the given number.
+
+Input Format
+
+A integer input
+
+Constraints
+
+Suspense
+
+Output Format
+
+The reverse of the given number N.
+
+Sample Input 0
+
+1234
+Sample Output 0
+
+4321
+PROGRAM:
+a=input()
+if(a[0]=="-"):
+    a='-'+str(int(a[1:][::-1]))
+else:
+    a=int(a[::-1])
+print(a)
+
+
+====================================================
+11.PRIME FACTORS V1
+Given a number N, print the prime factors of the given number
+
+Input Format
+
+One integer value N
+
+Constraints
+
+1<=N<=10^18
+
+Output Format
+
+Prime factors of the number, each seperated by a space
+
+Sample Input 0
+
+276398300
+Sample Output 0
+
+2 2 5 5 83 33301
+PROGRAM:
+from math import sqrt as s
+n=int(input())
+while(n%2==0):
+    print("2",end=" ")
+    n=n/2
+for i in range(3,int(s(n)+1),2):
+    while(n%i==0):
+        print(i,end=" ")
+        n/=i
+if(n>2):
+    print(int(n),end=" ")
+
+
+================================================
+12.CONVERT BASE 2.0
+Given a number of with base A to base B, where A is the smallest number which has two factors, and B is a number which is second highest factor of a number which when added with the second ever number which has odd number of factors, they add up to form a number which is the sisth ever number to have odd number of factors.
+
+Input Format
+
+One integer input N
+
+Constraints
+
+1<=N<=10^18
+
+Output Format
+
+The converted base element output
+
+Sample Input 0
+
+11000100000111110
+Sample Output 0
+
+1883e
+PROGRAM:
+a=input()
+a=int(a,2)
+l=[]
+while a:
+    if a%16 >9:
+        if a%16==10:
+            l.append('a')
+        if a%16==11:
+            l.append('b')
+        if a%16==12:
+            l.append('c')
+        if a%16==13:
+            l.append('d')
+        if a%16==14:
+            l.append('e')
+        if a%16==15:
+            l.append('f')
+    else:
+        l.append(str(a%16))
+    a=a//16
+l=l[::-1]
+print("".join(l))
+
+=============================================================
+13. DIGIT COUNT 2
+Given a Number N, find the number of digits in the given number
+
+Input Format
+
+A integer input
+
+Constraints
+
+1<=N<=10^50
+
+Output Format
+
+One integer output
+
+Sample Input 0
+
+19606524803580981401080963834091988718121158294792
+Sample Output 0
+
+50
+PROGRAM:
+a=input()
+c=0
+for i in a:
+    c+=1
+print(c)
+    
+
+
+======================================================
+14
+Given a number N followed by N integer values, find the second larget number.
+
+Input Format
+
+First line of input has one integer input N The sedond line of input has N spaced integers
+
+Constraints
+
+1<=N=10**9 1<=a[i]<=10**9
+
+Output Format
+
+Print the second largest number
+
+Sample Input 0
+
+223
+624226412 698487912 503940000 420087841 95546809 604089463 693941455 844251425 290110592 806819906 771547845 715327112 112154852 609518612 615668603 594081864 922477673 569555388 247958204 369474988 18483890 599877376 625066171 568872340 565152536 895690187 789193536 430385654 814241316 477327503 538833722 726509443 981324403 470366940 679267867 946393907 553822675 16956049 943091617 815485718 316599313 683408459 887539399 56882490 863947154 64011468 864227913 316800260 829760305 991946364 958506958 159942399 876713728 965669227 125302088 487968123 38158258 890562568 793702014 836800763 18161166 943780005 787801817 506712281 222186575 520459876 243872578 340810109 88806175 788599823 356719312 869801736 441162111 804176267 443496546 291682869 193532651 173955063 994133655 690549053 933683908 387452950 104873309 987857691 678841279 971814022 705396393 796659245 445187672 741336393 225445753 627954737 202579657 249919950 45387248 635880127 979358796 237115026 900147294 384201758 328938714 728802584 362897804 276449009 139602809 736501197 608944271 84306324 571723979 754734481 423178655 624722937 941416513 555522177 366704654 285823988 704595420 489475423 337807862 731997268 725240334 223997803 312778452 985010225 751387146 930659323 364857360 405501535 656209790 796350748 632703473 162080098 626599165 476309501 869424958 65675031 30429083 852440735 265309862 484876464 430412196 940918641 228527456 873776712 396727820 879922717 260726927 366068651 190306367 724009346 732457733 81458241 31986273 56976526 916685116 994361731 795036604 759213457 218195315 787995115 623443463 246638003 825344583 342718723 356326828 292343846 733556007 87895192 391839816 88710653 668093434 339834214 889557706 856244986 715855719 376018406 750485414 383345837 174024168 374020476 346514837 172642396 497245962 708975208 845377032 470645682 65736181 940552724 747244500 790014785 524957573 775981019 761104003 785249639 890043006 977985570 487334078 572595576 226048738 818590264 593462980 639995654 564650148 843398617 336057665 441112643 73582974 877154984 531411011 741586801 337708631 782290435 275546340 87569193 537998002 418919170 953336737 687165442 286526014 106136208 881464343 957452311 743209486
+Sample Output 0
+
+994133655
+PROGRAM:
+a=int(input())
+b=list(map(int,input().split()))
+b.sort(reverse=True)
+print(b[1])
+
+
+===========================================================
+15
+Given a number N, print PRIME prime numbers in the range 1 to N
+
+Input Format
+
+One integer value N
+
+Constraints
+
+1<=N<=10**9
+
+Output Format
+
+List of prime numbers in the range 1 to N eperted by a space. If there are no prime numbers in the given range print -1
+
+Sample Input 0
+
+8755
+Sample Output 0
+
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 211 223 227 229 233 239 241 251 257 263 269 271 277 281 283 293 307 311 313 317 331 337 347 349 353 359 367 373 379 383 389 397 401 409 419 421 431 433 439 443 449 457 461 463 467 479 487 491 499 503 509 521 523 541 547 557 563 569 571 577 587 593 599 601 607 613 617 619 631 641 643 647 653 659 661 673 677 683 691 701 709 719 727 733 739 743 751 757 761 769 773 787 797 809 811 821 823 827 829 839 853 857 859 863 877 881 883 887 907 911 919 929 937 941 947 953 967 971 977 983 991 997 1009 1013 1019 1021 1031 1033 1039 1049 1051 1061 1063 1069 1087 1091 1093 1097 1103 1109 1117 1123 1129 1151 1153 1163 1171 1181 1187 1193 1201 1213 1217 1223 1229 1231 1237 1249 1259 1277 1279 1283 1289 1291 1297 1301 1303 1307 1319 1321 1327 1361 1367 1373 1381 1399 1409 1423 1427 1429 1433 1439 1447 1451 1453 1459 1471 1481 1483 1487 1489 1493 1499 1511 1523 1531 1543 1549 1553 1559 1567 1571 1579 1583 1597 1601 1607 1609 1613 1619 1621 1627 1637 1657 1663 1667 1669 1693 1697 1699 1709 1721 1723 1733 1741 1747 1753 1759 1777 1783 1787 1789 1801 1811 1823 1831 1847 1861 1867 1871 1873 1877 1879 1889 1901 1907 1913 1931 1933 1949 1951 1973 1979 1987 1993 1997 1999 2003 2011 2017 2027 2029 2039 2053 2063 2069 2081 2083 2087 2089 2099 2111 2113 2129 2131 2137 2141 2143 2153 2161 2179 2203 2207 2213 2221 2237 2239 2243 2251 2267 2269 2273 2281 2287 2293 2297 2309 2311 2333 2339 2341 2347 2351 2357 2371 2377 2381 2383 2389 2393 2399 2411 2417 2423 2437 2441 2447 2459 2467 2473 2477 2503 2521 2531 2539 2543 2549 2551 2557 2579 2591 2593 2609 2617 2621 2633 2647 2657 2659 2663 2671 2677 2683 2687 2689 2693 2699 2707 2711 2713 2719 2729 2731 2741 2749 2753 2767 2777 2789 2791 2797 2801 2803 2819 2833 2837 2843 2851 2857 2861 2879 2887 2897 2903 2909 2917 2927 2939 2953 2957 2963 2969 2971 2999 3001 3011 3019 3023 3037 3041 3049 3061 3067 3079 3083 3089 3109 3119 3121 3137 3163 3167 3169 3181 3187 3191 3203 3209 3217 3221 3229 3251 3253 3257 3259 3271 3299 3301 3307 3313 3319 3323 3329 3331 3343 3347 3359 3361 3371 3373 3389 3391 3407 3413 3433 3449 3457 3461 3463 3467 3469 3491 3499 3511 3517 3527 3529 3533 3539 3541 3547 3557 3559 3571 3581 3583 3593 3607 3613 3617 3623 3631 3637 3643 3659 3671 3673 3677 3691 3697 3701 3709 3719 3727 3733 3739 3761 3767 3769 3779 3793 3797 3803 3821 3823 3833 3847 3851 3853 3863 3877 3881 3889 3907 3911 3917 3919 3923 3929 3931 3943 3947 3967 3989 4001 4003 4007 4013 4019 4021 4027 4049 4051 4057 4073 4079 4091 4093 4099 4111 4127 4129 4133 4139 4153 4157 4159 4177 4201 4211 4217 4219 4229 4231 4241 4243 4253 4259 4261 4271 4273 4283 4289 4297 4327 4337 4339 4349 4357 4363 4373 4391 4397 4409 4421 4423 4441 4447 4451 4457 4463 4481 4483 4493 4507 4513 4517 4519 4523 4547 4549 4561 4567 4583 4591 4597 4603 4621 4637 4639 4643 4649 4651 4657 4663 4673 4679 4691 4703 4721 4723 4729 4733 4751 4759 4783 4787 4789 4793 4799 4801 4813 4817 4831 4861 4871 4877 4889 4903 4909 4919 4931 4933 4937 4943 4951 4957 4967 4969 4973 4987 4993 4999 5003 5009 5011 5021 5023 5039 5051 5059 5077 5081 5087 5099 5101 5107 5113 5119 5147 5153 5167 5171 5179 5189 5197 5209 5227 5231 5233 5237 5261 5273 5279 5281 5297 5303 5309 5323 5333 5347 5351 5381 5387 5393 5399 5407 5413 5417 5419 5431 5437 5441 5443 5449 5471 5477 5479 5483 5501 5503 5507 5519 5521 5527 5531 5557 5563 5569 5573 5581 5591 5623 5639 5641 5647 5651 5653 5657 5659 5669 5683 5689 5693 5701 5711 5717 5737 5741 5743 5749 5779 5783 5791 5801 5807 5813 5821 5827 5839 5843 5849 5851 5857 5861 5867 5869 5879 5881 5897 5903 5923 5927 5939 5953 5981 5987 6007 6011 6029 6037 6043 6047 6053 6067 6073 6079 6089 6091 6101 6113 6121 6131 6133 6143 6151 6163 6173 6197 6199 6203 6211 6217 6221 6229 6247 6257 6263 6269 6271 6277 6287 6299 6301 6311 6317 6323 6329 6337 6343 6353 6359 6361 6367 6373 6379 6389 6397 6421 6427 6449 6451 6469 6473 6481 6491 6521 6529 6547 6551 6553 6563 6569 6571 6577 6581 6599 6607 6619 6637 6653 6659 6661 6673 6679 6689 6691 6701 6703 6709 6719 6733 6737 6761 6763 6779 6781 6791 6793 6803 6823 6827 6829 6833 6841 6857 6863 6869 6871 6883 6899 6907 6911 6917 6947 6949 6959 6961 6967 6971 6977 6983 6991 6997 7001 7013 7019 7027 7039 7043 7057 7069 7079 7103 7109 7121 7127 7129 7151 7159 7177 7187 7193 7207 7211 7213 7219 7229 7237 7243 7247 7253 7283 7297 7307 7309 7321 7331 7333 7349 7351 7369 7393 7411 7417 7433 7451 7457 7459 7477 7481 7487 7489 7499 7507 7517 7523 7529 7537 7541 7547 7549 7559 7561 7573 7577 7583 7589 7591 7603 7607 7621 7639 7643 7649 7669 7673 7681 7687 7691 7699 7703 7717 7723 7727 7741 7753 7757 7759 7789 7793 7817 7823 7829 7841 7853 7867 7873 7877 7879 7883 7901 7907 7919 7927 7933 7937 7949 7951 7963 7993 8009 8011 8017 8039 8053 8059 8069 8081 8087 8089 8093 8101 8111 8117 8123 8147 8161 8167 8171 8179 8191 8209 8219 8221 8231 8233 8237 8243 8263 8269 8273 8287 8291 8293 8297 8311 8317 8329 8353 8363 8369 8377 8387 8389 8419 8423 8429 8431 8443 8447 8461 8467 8501 8513 8521 8527 8537 8539 8543 8563 8573 8581 8597 8599 8609 8623 8627 8629 8641 8647 8663 8669 8677 8681 8689 8693 8699 8707 8713 8719 8731 8737 8741 8747 8753
+PROGRAM:
+n=int(input())
+for i in range(2,n):
+    flag=True
+    for x in range(2,i):
+        if i%x==0:
+            break
+    else :
+        print(i,end=' ')
+
+
+========================================================
+16.inorder tree in stair case
+class Node:
+    def __init__ (self,n):
+        self.data=n
+        self.left=None
+        self.right=None
+        self.root=None
+    def create(self):
+        if(self.data>1):
+            self.left=Node(self.data-1)
+            self.left.root=self
+            self.left.create()
+            self.right=Node(self.data-2)
+            self.right.root=self
+            self.right.create()
+        elif(self.data==1):
+            self.left=Node(self.data-1)
+            self.left.root=self
+            self.left.create()
+        else:
+            s=''
+            self.print_path(s)
+    def print_path(self,s):
+        s+=str(self.data)
+        if(self.root!=None):
+            self.root.print_path(s)
+        else:
+            print(s)
+    def order(self,s):
+        s.append(self.data)
+        if(self.data==0):
+            t=s[::-1]
+            print(*t)
+        if(self.left!=None):
+            self.left.order(s)
+        if(self.right!=None):
+            self.right.order(s)
+        s.pop()    
+n=int(input())
+r=Node(n)
+r.create()
+r.order([])
+
+====================================
+17.tree with stair case using skip  
+
+prasathcse
+Thu, Feb 27, 1:40 PM
+
+to Kabil, allwinrajjones, POOJA, priyasumathi1117, poojabhuvana2699, swathiomm, shivanipalanikumar410, Jamunasri, KEVIN, me
+
+class Node:
+    def __init__(self,n,k):
+        self.data=n
+        self.skip=k
+        self.nxt=[]
+        self.root=None
+    def create(self):
+        if(self.data==0):
+            s=''
+            self.path(s)
+        for i in range(1,self.skip+1):
+            if(self.data>=0):
+                self.nxt.append(Node(self.data-i,self.skip))
+                self.nxt[-1].root=self
+                self.nxt[-1].create()
+    def path(self,s):
+        s+=str(self.data)
+        if(self.root!=None):
+            self.root.path(s)
+        else:
+            print(s)
+n,k=map(int,input().split())
+r=Node(n,k)
+r.create()
+=======================================================
+
+21
+from math import sqrt as sq
+l1=list(map(int,input().split()))
+x,y=0
+for i in l1:
+    if i=='N':
+        x+=int(temp)
+        temp=0
+    elif i=='E':
+        y+=temp
+        temp=0
+    elif i=='S':
+        x+=temp
+        temp=0
+    elif i=='S':
+        x+=temp
+        temp=0
+    elif i!= " ":#0-> 48(ASCII value)
+        temp=temp*10+int(ord(i)-48)
+result=sq(math.pow(x,2)+math.pow(y,2))
+print(result)
+
+
+=================================================================
+22
+
+
+
+19.Binary Tree
+
+
+
+class Node:
+    def __init__ (self,n):
+        self.data=n
+        self.left=None
+        self.right=None
+        self.root=None
+    def create(self):
+        if(self.data>1):
+            self.left=Node(self.data-1)
+            self.left.root=self
+            self.left.create()
+            self.right=Node(self.data-2)
+            self.right.root=self
+            self.right.create()
+        elif(self.data==1):
+            self.left=Node(self.data-1)
+            self.left.root=self
+            self.left.create()
+        else:
+            s=''
+            self.print_path(s)
+    def print_path(self,s):
+        s+=str(self.data)
+        if(self.root!=None):
+            self.root.print_path(s)
+        else:
+            print(s)
+n=int(input())
+r=Node(n)
+r.create()
+====================================================
+19
+You are given an infinite 2-d grid with the bottom left cell referenced as (1,1). All the cells contain a value of zero initially. Let's play a game?
+
+The game consists of N steps wherein each step you are given two integers a and b. The value of each of the cells in the co-ordinate (u, v) satisfying 1 ≤ u ≤ a and 1 ≤ v ≤ b, is increased by 1. After N such steps, if X is the largest number amongst all the cells in the rectangular board, can you print the number of X's in the board?
+
+Input Format
+The first line of input contains a single integer N. N lines follow.
+Each line contains two integers a and b separated by a single space.
+
+Output Format
+Output a single integer - the number of X's.
+
+Constraints
+1 ≤ N ≤ 100
+1 ≤ a ≤ 106
+1 ≤ b ≤ 106
+
+Sample Input
+
+3
+2 3
+3 7
+4 1
+Sample Output
+
+2
+Explanation
+
+Assume that the following board corresponds to cells (i, j) where 1 ≤ i ≤ 4 and 1 ≤ j ≤ 7.
+
+At the beginning board is in the following state:
+
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 
+After the first step we will obtain:
+
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+1 1 1 0 0 0 0
+1 1 1 0 0 0 0 
+After the second step we will obtain:
+
+0 0 0 0 0 0 0
+1 1 1 1 1 1 1
+2 2 2 1 1 1 1
+2 2 2 1 1 1 1 
+Finally, after the last step we will obtain:
+
+1 0 0 0 0 0 0
+2 1 1 1 1 1 1
+3 2 2 1 1 1 1
+3 2 2 1 1 1 1 
+So, the maximum number is 3 and there are exactly two cells which correspond to 3. Hence 2.
+
+
+
+n = int(input())
+x = []
+y = []
+for i in range(n):
+    a,b = list(map(int, input().split()))
+    x.append(a)
+    y.append(b)
+print(min(x)*min(y))
+
+
+
+
+#1st line .jus integer i/p .x , y nu 2 cols will be created ..we've 2 find min of 2 cols and mul. it......that's it dude!
+
+
+===========================================================
+20
+import math
+a=input().split()
+x,y=0,0
+for i in a:
+    if(i[-1]=="N"):
+        y+=int(i[:-1])
+    elif(i[-1]=="S"):
+        y-=int(i[:-1])
+    elif(i[-1]=="E"):
+        x+=int(i[:-1])
+    else:
+        x-=int(i[:-1])
+print("Your Coordinates:",x,y)
+if(x==0 and y>0):
+    way="S"
+elif(x==0 and y<0):
+    way="N"
+elif(x>0 and y==0):
+    way="W"
+elif(x<0 and y==0):
+    way="E"
+elif(x>0 and y>0):
+    way="SW"
+elif(x<0 and y<0):
+    way="NE"
+elif(x<0 and y>0):
+    way="SE"
+elif(x==0 and y==0):
+    way="You are at center"
+else:
+    way="NW"
+dis=math.sqrt((x**2)+(y**2))
+print("Required: ","%.1f %s"%(dis,way))
+
+
+
+=====================================================
+
+
+21.base problem for all bases
+
+l=[str(i) for i in range(10)]
+l.extend([chr(i) for i in range(65,65+26)]
+l.extend([chr(i) for i in range(97,97+26)]
+def Int(s,base):
+    p,r=1,0
+    while(len(s)!=0):
+        t=s[-1]
+        r+=p*1.index(t)
+        s=s[:-1]
+        p=p*base
+    return r
+def func(v,base):
+    r=""
+    while(v!=0):
+        r=l[v%base]+r
+        v=v//base
+    return r
+s,b=input().split()
+t=Int(s,int(b))
+print(t)
+print(func(t,int(b)))
+
+
